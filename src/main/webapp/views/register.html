@@ -1,0 +1,24 @@
+<div class="row">
+  <h1 class="page-header">
+      Register
+  </h1>
+  <form ng-submit="register()">
+  		<div class="form-group">
+          <label for="email">Email:</label>
+          <input type="text" ng-model="account.email" class="form-control" />
+      </div>
+      <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" ng-model="account.username" class="form-control" />
+      </div>
+      <div class="form-group">
+          <label for="password" >Password:</label>
+          <input type="password" ng-model="account.password" class="form-control" />
+      </div>
+      <div class="form-group">
+          <label for="repeatPass" >Repeat Password:</label>
+          <input type="password" ng-model="account.repeatPass" class="form-control" />
+      </div>
+      <button class="btn btn-success" type="submit">Register</button>
+  </form>
+</div>

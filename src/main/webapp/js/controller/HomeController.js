@@ -27,20 +27,5 @@ angular.module('homeController', [ 'ui.router', 'ui.bootstrap' ])
 						"name" : "Andrei",
 						"description" : "Most Awesome Dev Ever"
 					};
-					$scope.comments = [ {
-						"author" : "Narcisa",
-						"text" : "Smecheras <3, m-am indragostit"
-					}, {
-
-						"author" : "Georgiana",
-						"text" : "Vreau sa fiu ca tine!!!!!!!"
-					}, {
-
-						"author" : "Vlad",
-						"text" : "Esti idolul meu!"
-					}, {
-
-						"author" : "Florin Salam",
-						"text" : "Iti cant o melodie!"
-					} ];
+					$scope.comments = commentsService.getAllComments();
 				} ]);

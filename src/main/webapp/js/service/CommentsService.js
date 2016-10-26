@@ -20,6 +20,10 @@ webApp.service('commentsService', [ '$http', 'commonResourcesFactory',
 
 						"author" : "Florin Salam",
 						"text" : "Iti cant o melodie!"
+					}, {
+
+						"author" : "Florin Salam2",
+						"text" : "Iti cant o melodie!"
 					} ];
 					return data;
 

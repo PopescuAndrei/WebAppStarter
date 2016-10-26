@@ -1,23 +1,19 @@
 package ro.andrei.webapp.domain.support;
 
-import org.springframework.data.domain.Persistable;
+import java.io.Serializable;
 
 import javax.persistence.Transient;
-import java.io.Serializable;
+
+import org.springframework.data.domain.Persistable;
 
 /**
  * Created by epopean on 10/4/2016.
  */
 public abstract class AbstractEntity<PK extends Serializable> implements Persistable<PK> {
 
-    /**
-     * Method that sets the id of the entity
-     *
-     * @param id
-     */
-    protected abstract void setId(final Long id);
+	private static final long serialVersionUID = 1L;
 
-    /**
+	/**
      * Must be {@link Transient} in order to ensure that no JPA provider complains because of a missing setter.
      *
      * @see org.springframework.data.domain.Persistable#isNew()
@@ -27,21 +23,11 @@ public abstract class AbstractEntity<PK extends Serializable> implements Persist
         return null == getId();
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see java.lang.Object#toString()
-     */
     @Override
     public String toString() {
         return String.format("Entity of type %s with id: %s", this.getClass().getName(), getId());
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see java.lang.Object#equals(java.lang.Object)
-     */
     @Override
     public boolean equals(Object obj) {
 
@@ -62,11 +48,6 @@ public abstract class AbstractEntity<PK extends Serializable> implements Persist
         return null == this.getId() ? false : this.getId().equals(that.getId());
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see java.lang.Object#hashCode()
-     */
     @Override
     public int hashCode() {
 
