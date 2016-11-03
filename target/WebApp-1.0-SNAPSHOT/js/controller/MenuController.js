@@ -1,4 +1,4 @@
-angular.module('menuController', [ 'ui.router' ])
+webApp.module('menuController', [ 'ui.router' ])
 
 .controller('MenuController', function MenuController($scope) {
 	$scope.actionsList = [ {

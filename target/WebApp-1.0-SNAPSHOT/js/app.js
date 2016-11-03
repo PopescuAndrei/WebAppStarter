@@ -1,4 +1,4 @@
-var webApp = angular.module( 'webAppStarter', ['ui.router', 'menuController', 'homeController']);
+var webApp = angular.module( 'webApp', ['ui.router', 'menuController', 'homeController']);
 
 webApp.config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
   $urlRouterProvider.otherwise( '/home' );

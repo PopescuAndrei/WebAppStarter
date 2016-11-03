@@ -1,4 +1,4 @@
-angular.module('homeController', [ 'ui.router', 'ui.bootstrap' ])
+webApp.module('homeController', [ 'ui.router', 'ui.bootstrap' ])
 
 .config(function config($stateProvider) {
 	$stateProvider.state('home', {
@@ -27,5 +27,5 @@ angular.module('homeController', [ 'ui.router', 'ui.bootstrap' ])
 						"name" : "Andrei",
 						"description" : "Most Awesome Dev Ever"
 					};
-					$scope.comments = commentsService;
+					$scope.comments = commentsService.getAllComments();
 				} ]);

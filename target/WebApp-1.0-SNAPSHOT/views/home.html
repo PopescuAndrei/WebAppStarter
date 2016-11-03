@@ -9,40 +9,39 @@
 			View The most awesome man alive: <strong>{{myVar.name}}</strong>
 		</h2>
 	</div>
+	<p>Proof that it works</p>
 	<div class="panel-body">
 		<div class="row">
-			<div class="container">
-				<div class="detailBox">
-					<div class="titleBox">
-						<label>Comment Box</label>
-						<button type="button" class="close" aria-hidden="true">&times;</button>
-					</div>
-					<div class="commentBox">
+			<div class="detailBox">
+				<div class="titleBox">
+					<label>Comment Box</label>
+					<button type="button" class="close" aria-hidden="true">&times;</button>
+				</div>
+				<div class="commentBox">
 
-						<p class="taskDescription">{{myVar.description}}</p>
-					</div>
-					<div class="actionBox">
-						<ul class="commentList">
-							<li ng-repeat="comment in comments">
-								<div class="commenterImage">
-									<img src="http://placekitten.com/50/50" />
-								</div>
-								<div class="commentText">
-									<p class="">{{comment.text}}</p>
-									<span class="date sub-text">{{comment.author}}</span>
+					<p class="taskDescription">{{myVar.description}}</p>
+				</div>
+				<div class="actionBox">
+					<ul class="commentList">
+						<li ng-repeat="comment in comments">
+							<div class="commenterImage">
+								<img src="http://placekitten.com/50/50" />
+							</div>
+							<div class="commentText">
+								<p class="">{{comment.text}}</p>
+								<span class="date sub-text">{{comment.author}}</span>
 
-								</div>
-							</li>
-						</ul>
-						<form class="form-inline" role="form">
-							<div class="form-group">
-								<input class="form-control" type="text" placeholder="Your comments" />
 							</div>
-							<div class="form-group">
-								<button class="btn btn-default">Add</button>
-							</div>
-						</form>
-					</div>
+						</li>
+					</ul>
+					<form class="form-inline" role="form">
+						<div class="form-group">
+							<input class="form-control" type="text" placeholder="Your comments" />
+						</div>
+						<div class="form-group">
+							<button class="btn btn-default">Add</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
