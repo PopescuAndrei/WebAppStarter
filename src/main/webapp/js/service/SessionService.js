@@ -5,12 +5,10 @@ webApp.factory('sessionService', function() {
 	//persists the data between page refreshes
 	session.login = function(data) {
 		localStorage.setItem("session", data);
-		console.log("user logged in with credentials " + data.name + " and " + data.password);
 	};
 	
 	//deletes the data on logout
 	session.logout = function() {
-		console.log(localStorage.getItem("session").name + " " + localStorage.getItem("session").password);
 		localStorage.removeItem("session");
 	};
 	

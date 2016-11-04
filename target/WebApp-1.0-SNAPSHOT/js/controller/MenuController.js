@@ -1,6 +1,4 @@
-webApp.module('menuController', [ 'ui.router' ])
-
-.controller('MenuController', function MenuController($scope) {
+webApp.controller('MenuController', function MenuController($scope) {
 	$scope.actionsList = [ {
 		label : 'First Menu',
 		url : '/WebApp/#/studentLogin',
@@ -21,5 +19,5 @@ webApp.module('menuController', [ 'ui.router' ])
 		url : '/WebApp/#/studentsList',
 		icon : 'fa fa-power-off',
 		show : true
-	}];
+	} ];
 });
