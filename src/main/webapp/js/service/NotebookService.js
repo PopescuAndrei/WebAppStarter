@@ -1,10 +1,10 @@
 /**
  * 
  */
-webApp.service('blogEntryService', ['$http', 'commonResourcesFactory', function($http, commonResourcesFactory) {
+webApp.service('NotebookService', ['$http', 'commonResourcesFactory', function($http, commonResourcesFactory) {
 	return {
 		findById: function(id) {
-			$http.get(commonResourcesFactory.findOneBlogUrl + id)
+			$http.get(commonResourcesFactory.findAllNotebooksForUser + id)
 				.success(function (data) {
 					return data;
 				})
@@ -21,21 +21,3 @@ webApp.service('blogEntryService', ['$http', 'commonResourcesFactory', function(
 		}
 	}
 }]);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

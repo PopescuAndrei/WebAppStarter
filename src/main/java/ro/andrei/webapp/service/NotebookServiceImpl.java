@@ -26,7 +26,7 @@ public class NotebookServiceImpl extends EntityServiceImpl<Notebook> implements 
 
 	@Override
 	public List<Notebook> findForUser(Long ownerId) {
-		return notebookRepository.findAllByOwner(ownerId);
+		return notebookRepository.findByOwner_Id(ownerId);
 	}
 	
     @PostConstruct

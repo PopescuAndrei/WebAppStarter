@@ -5,9 +5,9 @@
 
 	<ul class="nav">
 		<li ng-repeat="action in actionsList" ng-show="action.show == true">
-			<a href="{{action.url}}">
+			<a href="/WebApp/#/notebook/{{action.id}}">
 				<i class="{{action.icon}}"></i>
-				<p>{{action.label}}</p>
+				<p>{{action.title}}</p>
 			</a>
 		</li>
 	</ul>

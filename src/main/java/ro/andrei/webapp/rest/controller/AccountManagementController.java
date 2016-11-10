@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import ro.andrei.webapp.domain.Account;
-import ro.andrei.webapp.domain.Notebook;
 import ro.andrei.webapp.service.AccountService;
 import ro.andrei.webapp.service.NotebookService;
 
@@ -49,16 +48,5 @@ public class AccountManagementController {
             return new ResponseEntity<Account>(account, HttpStatus.OK);
         }
         return new ResponseEntity<Account>(HttpStatus.NOT_FOUND);
-    }
-
-    @RequestMapping(value="/{accountId}/notebooks", method = RequestMethod.POST)
-    public ResponseEntity<Notebook> createNotebook(@PathVariable Long accountId, @RequestBody Notebook notebook) {
-        Account account = accountService.find(accountId);
-        notebook.setOwner(account);
-        notebook = notebookService.create(notebook);
-        if(notebook!=null){
-            return new ResponseEntity<Notebook>(notebook, HttpStatus.OK);
-        }
-        return new ResponseEntity<Notebook>(HttpStatus.NOT_FOUND);
     }
 }

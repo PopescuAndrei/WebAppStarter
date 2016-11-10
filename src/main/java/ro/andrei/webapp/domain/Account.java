@@ -28,7 +28,8 @@ public class Account extends BaseEntity {
 
     @Column(name = NAME, nullable = false, unique = true, length = 100)
     private String name;
-    @Column(name = PASSWORD, nullable = false, unique = true, length = 100)
+    
+    @Column(name = PASSWORD, nullable = false, length = 100)
     private String password;
 
     public Long getId() {

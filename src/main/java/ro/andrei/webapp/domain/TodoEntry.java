@@ -1,6 +1,6 @@
 package ro.andrei.webapp.domain;
 
-import static ro.andrei.webapp.util.DbNames.CONTENT;
+import static ro.andrei.webapp.util.DbNames.DESCRIPTION;
 import static ro.andrei.webapp.util.DbNames.TITLE;
 
 import javax.persistence.Column;
@@ -15,6 +15,11 @@ import ro.andrei.webapp.domain.support.BaseEntity;
 @Entity
 public class TodoEntry extends BaseEntity {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -22,8 +27,8 @@ public class TodoEntry extends BaseEntity {
 	@Column(name = TITLE, nullable = false, unique = false, length = 100)
 	private String title;
 
-	@Column(name = CONTENT, nullable = false, unique = false, length = 100)
-	private String content;
+	@Column(name = DESCRIPTION, nullable = false, unique = false, length = 100)
+	private String description;
 
 	@ManyToOne
 	private Notebook notebook;
@@ -44,19 +49,19 @@ public class TodoEntry extends BaseEntity {
 		this.title = title;
 	}
 
-	public String getContent() {
-		return content;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setContent(String content) {
-		this.content = content;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
-	public Notebook getBlog() {
+	public Notebook getNotebook() {
 		return notebook;
 	}
 
-	public void setBlog(Notebook notebook) {
+	public void setNotebook(Notebook notebook) {
 		this.notebook = notebook;
 	}
 
@@ -65,10 +70,9 @@ public class TodoEntry extends BaseEntity {
 		if (!(entity instanceof TodoEntry)) {
 			throw new IllegalArgumentException("Entity should be a TodoEntry");
 		}
-
 		TodoEntry todoEntry = (TodoEntry) entity;
 		setTitle(todoEntry.getTitle());
-		setContent(todoEntry.getContent());
-		setBlog(todoEntry.getBlog());
+		setDescription(todoEntry.getDescription());
+		setNotebook(todoEntry.getNotebook());
 	}
 }
